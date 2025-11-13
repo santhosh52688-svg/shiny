@@ -1,38 +1,191 @@
-.App {
+
+
+
+
+/* Intro */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.intro h1 {
+  font-size: 70px;
+  color: #fcf9fa;
+  margin-bottom: 20px;
+
+}
+
+.intro button {
+  background-color: #6e5659;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.intro button:hover {
+  background-color: #e91e63;
+}
+
+/* Message section */
+.message {
+  background: rgb(236, 226, 226);
+  border-radius: 15px;
+  padding: 40px 20px; /* reduce vertical padding */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin: auto;
+}
+
+.message p {
+ font-size: 2.5rem; /* increase font size */
+  line-height: 1.8;  /* better readability */
+  text-align: center;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  
+}
+
+.message button {
+  margin-top: 20px;
+  background: #ff477e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 30px 40px;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 700;
+  margin-left: 800px;
+}
+
+/* Gallery grid — FIXED 4×3 layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+  padding: 0 40px;
+}
+
+/* Flip card size */
+.flip-card {
+  background: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* FRONT & BACK */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-front {
+  background-color: #fff;
+}
+
+.flip-card-back {
+  background-color: #fcf9fa;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.flip-card-back p {
+  color: rgb(65, 12, 12);
+  font-size: 25px;
+  font-weight: 500;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Image & Video fit perfectly */
+.flip-card-front img,
+.flip-card-front video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Final image */
+.final-image {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 60px;
+}
+
+.final-photo {
+  width: 700px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.final-photo:hover {
+  transform: scale(1.03);
+}
+
+/* Replay button */
+.final-buttons {
+  margin-top: 25px;
+}
+
+.final-buttons button {
+  background: #ff477e;
   color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.final-buttons button:hover {
+  background: #e91e63;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Hint text */
+.hint {
+  color: #fcf9f9;
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 25px;
+  margin-left: 1200px;
 }
